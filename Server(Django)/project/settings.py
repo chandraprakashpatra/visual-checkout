@@ -88,6 +88,16 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Set up Channels
 ASGI_APPLICATION = "project.asgi.application" #added
 
+# settings.py
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
+
 
 
 # Database
